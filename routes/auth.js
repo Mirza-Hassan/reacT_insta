@@ -36,6 +36,7 @@ router.post('/signup', (req, res) => {
         res.status(422).json({error:"please add all the fields"})
     }
     //Saving or posting data
+    res.status(200).send({success: "All good!"})
     User.findOne({email:email})
     .then((savedUser)=>{
         if(savedUser){
