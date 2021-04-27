@@ -73,6 +73,7 @@ router.post('/signup', (req, res) => {
 // Creating Sign in/Login route
 router.post('/signin', (req, res) =>{
     const {email,password} = req.body
+    console.log(email, password);
     if(!email || !password){
         return res.status(422).json({error:"please add email or password"})
     }
