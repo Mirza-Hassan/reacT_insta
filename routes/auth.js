@@ -77,7 +77,7 @@ router.post('/signin', (req, res) =>{
     if(!email || !password){
         return res.status(422).json({error:"please add email or password"})
     }
-    //res.status(200).send({success: "All good!"})
+    res.status(200).send({success: "All good!"})
     User.findOne({email:email})
     .then(savedUser =>{
         if(!savedUser){
