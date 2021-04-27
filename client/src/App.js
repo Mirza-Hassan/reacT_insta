@@ -20,17 +20,17 @@ const Routing =()=>{
   const {state, dispatch} =useContext(UserContext)
 
   useEffect(()=>{
-    const user = JSON.parse(localStorage.getItem("user"))
-    console.log(typeof(user),user)
-    if(user){
-      dispatch({type:"USER",payload:user})
-    }
+    if(history.location.pathname){
+      history.push('/signin')
+    }    
     else if(history.location.pathname.startsWith('/reset')){
      console.log(history.location.pathname)
     //  history.push('/reset/:token')
     }
-    else if(history.location.pathname){
-      history.push('/signin')
+    else if(JSON.parse(localStorage.getItem("user"))){
+      const user = JSON.parse(localStorage.getItem("user"))
+      console.log(typeof(user),user)  
+      dispatch({type:"USER",payload:user})
     }
   },[])
 
