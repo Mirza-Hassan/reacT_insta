@@ -11,4 +11,6 @@ funtionality:
 - reset password or new password
 - image: cloudinary
 - nodemailer sendgrid
+
+like unlike	comment follow unfollow profile pic latest post 
 ```
